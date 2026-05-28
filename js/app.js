@@ -255,7 +255,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // A. Hero Section Reveals (Cinematic Blurs and Spacings)
         const heroTimeline = gsap.timeline();
-        heroTimeline.from(".hero-monogram", { opacity: 0, y: -25, duration: 1.5, ease: "power4.out" })
+        heroTimeline.from(".hero-section .ganesha-blessing", { opacity: 0, y: -20, filter: "blur(3px)", duration: 1.5, ease: "power3.out" })
+                    .from(".hero-monogram", { opacity: 0, y: -25, duration: 1.5, ease: "power4.out" }, "-=1.2")
                     .from(".hero-title-invite", { opacity: 0, y: 20, filter: "blur(5px)", duration: 1.5, ease: "power3.out" }, "-=1.0")
                     .from(".couple-name", { 
                         opacity: 0, 

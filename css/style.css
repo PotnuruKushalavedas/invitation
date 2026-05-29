@@ -255,6 +255,7 @@ section {
     padding: 3rem 2rem;
     text-align: center;
     background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.9) 0%, rgba(245,234,218,0.7) 100%);
+
 }
 
 .envelope-border-lines {
@@ -293,7 +294,7 @@ section {
 
 .envelope-monogram {
     font-family: var(--font-decor);
-    font-size: 2.5rem;
+    font-size: 4.5rem;
     color: var(--color-gold);
     background: var(--color-gold-foil);
     -webkit-background-clip: text;
@@ -329,6 +330,17 @@ section {
     opacity: 0;
     transform: translateY(15px);
     animation: fade-up 1.2s ease 1s forwards;
+}
+.divine-blessing{
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 1.8rem;
+    opacity: 1;
+    text-align: center;
+    text-shadow: 0 0 18px rgba(194, 157, 83, 0.15);
 }
 
 /* Wax Seal Button */
@@ -440,18 +452,19 @@ section {
     align-items: center;
     position: relative;
 }
-/* Elegant Ganesha Blessing */
-.ganesha-blessing {
+.ganesha-blessing{
     font-family: var(--font-serif);
-    font-size: 1rem;
-    letter-spacing: 4px;
+    font-size: 3.5rem;
+    letter-spacing: 3.5px;
     text-transform: uppercase;
     color: var(--color-gold);
     margin-bottom: 1.8rem;
-    opacity: 0.85;
+    opacity: 1;
     text-align: center;
     text-shadow: 0 0 18px rgba(194, 157, 83, 0.15);
 }
+
+
 
 .hero-vignette {
     position: absolute;

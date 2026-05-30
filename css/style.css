@@ -58,6 +58,13 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Scroll Lock Helper */
+body.lock-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 5px;
@@ -162,7 +169,7 @@ section {
 
 /* Cinematic Light Leak Overlay */
 .light-leak {
-    position: absolute;
+    position: fixed;
     width: 80vw;
     height: 80vh;
     border-radius: 50%;
@@ -406,17 +413,32 @@ body {
 
 /* Active State for Opening Screen Split Box */
 .opening-screen.opened .opening-panel.left {
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
 }
 
 .opening-screen.opened .opening-panel.right {
-    transform: translateX(100vw);
+    transform: translateX(100%);
 }
 
 .opening-screen.opened .envelope-container-fixed {
     transform: translate(-50%, -50%) scale(1.12);
     opacity: 0;
     pointer-events: none;
+}
+
+/* Main Content Visibility & Overflow Fixes */
+.invitation-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.22, 1);
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.invitation-content.revealed {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Background Music Toggle Button */

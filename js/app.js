@@ -156,6 +156,15 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 openingScreen.style.display = "none";
                 
+                // Reveal main content container smoothly
+                const content = document.querySelector(".invitation-content");
+                if (content) {
+                    content.classList.add("revealed");
+                }
+                
+                // Unlock body scroll
+                document.body.classList.remove("lock-scroll");
+                
                 // Force a window resize event to trigger canvas elements to recalculate size
                 window.dispatchEvent(new Event('resize'));
                 

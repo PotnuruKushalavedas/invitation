@@ -1324,7 +1324,9 @@ body {
         width: 92%;
     }
     .couple-name {
-        font-size: 3.6rem;
+        font-size: clamp(2.5rem, 11vw, 4rem);
+        letter-spacing: 2px;
+        line-height: 1.1;
     }
     .ampersand {
         font-size: 3rem;
@@ -1337,19 +1339,62 @@ body {
         font-size: 1.8rem;
     }
     .countdown-wrap {
-        gap: 1.5rem;
+        gap: 1rem;
     }
     .countdown-item {
-        min-width: 100px;
+        min-width: 60px;
     }
     .countdown-number {
-        font-size: 3.5rem;
+        font-size: 2rem;
     }
     .countdown-divider {
         display: none;
     }
     .map-inner {
         height: 350px;
+    }
+    .hero-section {
+        min-height: 100svh;
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+    }
+    .hero-subtitle {
+        letter-spacing: 3px;
+        font-size: 0.7rem;
+    }
+    .hero-date {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+        margin-bottom: 1.5rem;
+    }
+    .scroll-indicator {
+        bottom: 10px;
+        font-size: 0.5rem;
+        letter-spacing: 3px;
+        gap: 6px;
+    }
+    .scroll-line {
+        height: 32px;
+    }
+    .footer-section {
+        padding: 3rem 1rem 1.5rem;
+    }
+    .footer-monogram {
+        font-size: 1.8rem;
+    }
+    .footer-thanks {
+        font-size: 1rem;
+    }
+    .p10,
+    .p11,
+    .p12,
+    .p13,
+    .p14,
+    .p15,
+    .p16,
+    .p17,
+    .p18 {
+        display: none;
     }
 }
 
@@ -1801,79 +1846,7 @@ section {
     line-height: 2rem;
 }
 
-/* Mobile Luxury Optimization */
-@media (max-width: 768px) {
 
-    .hero-section {
-        min-height: 100svh;
-        padding-top: 5rem;
-        padding-bottom: 2rem;
-    }
-
-    .couple-name {
-        font-size: clamp(2.5rem, 11vw, 4rem);
-        letter-spacing: 2px;
-        line-height: 1.1;
-    }
-
-    .hero-subtitle {
-        letter-spacing: 3px;
-        font-size: 0.7rem;
-    }
-
-    .hero-date {
-        font-size: 1.2rem;
-        letter-spacing: 3px;
-        margin-bottom: 1.5rem;
-    }
-
-    .scroll-indicator {
-        bottom: 10px;
-        font-size: 0.5rem;
-        letter-spacing: 3px;
-        gap: 6px;
-    }
-
-    .scroll-line {
-        height: 32px;
-    }
-
-    .countdown-wrap {
-        gap: 1rem;
-    }
-
-    .countdown-item {
-        min-width: 60px;
-    }
-
-    .countdown-number {
-        font-size: 2rem;
-    }
-
-    .footer-section {
-        padding: 3rem 1rem 1.5rem;
-    }
-
-    .footer-monogram {
-        font-size: 1.8rem;
-    }
-
-    .footer-thanks {
-        font-size: 1rem;
-    }
-
-    .p10,
-    .p11,
-    .p12,
-    .p13,
-    .p14,
-    .p15,
-    .p16,
-    .p17,
-    .p18 {
-        display: none;
-    }
-}
 
 *,
 *::before,

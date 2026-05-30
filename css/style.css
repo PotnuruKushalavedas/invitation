@@ -81,7 +81,8 @@ body {
     pointer-events: none;
     z-index: 9999;
     mix-blend-mode: difference;
-    transition: width 0.2s, height 0.2s;
+    opacity: 0;
+    transition: opacity 0.3s ease, width 0.2s, height 0.2s;
 }
 
 .custom-cursor-glow {
@@ -94,7 +95,8 @@ body {
     pointer-events: none;
     z-index: 9998;
     background: rgba(194, 157, 83, 0.015);
-    transition: transform 0.1s ease-out, width 0.3s, height 0.3s, background-color 0.3s;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.1s ease-out, width 0.3s, height 0.3s, background-color 0.3s;
 }
 
 /* Hover States for Custom Cursor */
@@ -1493,13 +1495,13 @@ body {
 .petal {
     position: absolute;
     top: -10%;
-    width: 12px;
-    height: 18px;
-    background: radial-gradient(circle at 30% 30%, #fff2f9, #a41262);
-    border-radius: 70% 0 70% 0;
-    opacity: 0.5;
-    filter: blur(0.4px);
-    mix-blend-mode: soft-light;
+    width: 14px;
+    height: 20px;
+    background: radial-gradient(circle at 35% 35%, #ffebf3 0%, #e0287d 60%, #80003c 100%);
+    border-radius: 70% 10% 70% 10%;
+    opacity: 0.8;
+    filter: blur(0.3px);
+    box-shadow: 0 2px 6px rgba(128, 0, 60, 0.2);
     animation: cinematic-fall linear infinite;
 }
 
@@ -1600,38 +1602,7 @@ body {
     }
 }
 /* Global Cinematic Background */
-body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background:
-        radial-gradient(circle at top left,
-        rgba(194,157,83,0.05),
-        transparent 30%),
 
-        radial-gradient(circle at bottom right,
-        rgba(205,139,119,0.06),
-        transparent 35%);
-        
-    pointer-events: none;
-    z-index: 0;
-}
-/* Hero Cinematic Glow */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle,
-        rgba(194,157,83,0.10),
-        transparent 70%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    filter: blur(80px);
-    z-index: 1;
-    pointer-events: none;
-}
 
 /* Film Grain Texture */
 body::after {

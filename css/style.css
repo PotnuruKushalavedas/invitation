@@ -333,8 +333,8 @@ section {
 }
 .divine-blessing{
     font-family: var(--font-serif);
-    font-size: 1.5rem;
-    letter-spacing: 3.5px;
+    font-size: 1.8rem;
+    letter-spacing: 3.0px;
     text-transform: uppercase;
     color: var(--color-gold);
     margin-bottom: 1.8rem;
@@ -636,8 +636,8 @@ section {
 
 .quote-telugu {
     font-family: var(--font-serif);
-    font-size: 1.9rem;
-    letter-spacing: 3px;
+    font-size: 1.2rem;
+    letter-spacing: 2.5px;
     color: var(--text-dark);
     max-width: 950px;
     margin: 0 auto 1.2rem auto;
@@ -649,11 +649,11 @@ section {
     font-family: var(--font-body);
     font-weight: 300;
     font-style: italic;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--text-muted-dark);
-    max-width: 700px;
+    max-width: 850px;
     margin: 0 auto;
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
     
 }
 

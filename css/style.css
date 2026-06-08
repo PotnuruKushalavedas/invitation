@@ -715,8 +715,9 @@ body {
     background: linear-gradient(to bottom, var(--bg-light-ivory) 0%, var(--bg-champagne) 100%);
     perspective: 1200px;
     padding-top: 4rem;
-    padding-bottom: 10rem;
+    padding-bottom: 8rem;
 }
+
 .section-title{
     font-family: var(--font-heading);
     font-size: 2.6rem;
@@ -733,92 +734,174 @@ body {
     text-shadow: 0 0 12px rgba(194,157,83,0.15);
 }
 
+/* Luxury Portrait Card */
 .photo-wrapper-card {
+    position: relative;
+
     max-width: 540px;
     width: 100%;
     margin: 0 auto;
-    border-radius: 16px;
+
+    border-radius: 18px;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--border-gold-soft);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.70),
+            rgba(255,255,255,.30)
+        );
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(194,157,83,.18);
+
     padding: 24px;
-    box-shadow: 0 45px 95px rgba(28, 24, 19, 0.12);
+
+    box-shadow:
+        0 45px 95px rgba(28,24,19,.12),
+        0 0 40px rgba(194,157,83,.05);
+
     transform: rotateY(-3deg) rotateX(3deg);
-    transition: transform 1.2s cubic-bezier(0.25, 1, 0.22, 1), box-shadow 1.2s cubic-bezier(0.25, 1, 0.22, 1), border-color 1.2s cubic-bezier(0.25, 1, 0.22, 1), background-color 1.2s cubic-bezier(0.25, 1, 0.22, 1);
+
+    transition:
+        transform 1.2s cubic-bezier(0.25,1,0.22,1),
+        box-shadow 1.2s cubic-bezier(0.25,1,0.22,1);
+
     animation: float 8s ease-in-out infinite;
 }
 
-.photo-wrapper-card:hover {
-    transform: rotateY(0deg) rotateX(0deg) scale(1.03);
-    box-shadow: 0 50px 110px rgba(194, 157, 83, 0.3);
-    border-color: var(--color-gold);
-}
+/* Soft golden halo behind card */
+.photo-wrapper-card::before{
+    content:'';
+    position:absolute;
 
-.photo-frame {
-    width: 100%;
-    aspect-ratio: 4/5;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid var(--color-gold);
-}
+    width:120%;
+    height:120%;
 
-/* Spotlight & Shimmer overlay on portrait */
-.photo-frame::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
 
     background:
-    radial-gradient(
-        circle at 50% 25%,
-        rgba(255,255,255,0.18) 0%,
-        rgba(255,255,255,0.04) 45%,
-        rgba(0,0,0,0.08) 100%
-    );
+        radial-gradient(
+            circle,
+            rgba(194,157,83,.12) 0%,
+            transparent 70%
+        );
 
-    z-index: 1;
-    pointer-events: none;
-    transition: var(--transition-smooth);
-}
-.photo-frame::after {
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    pointer-events: none;
-    z-index: 2;
+    filter:blur(40px);
+
+    z-index:-1;
 }
 
-.couple-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 1.8s cubic-bezier(0.25, 1, 0.3, 1);
+/* Hover */
+.photo-wrapper-card:hover {
+    transform: rotateY(0deg) rotateX(0deg) scale(1.03);
+
+    box-shadow:
+        0 50px 110px rgba(194,157,83,.18),
+        0 0 50px rgba(194,157,83,.10);
+
+    border-color: rgba(194,157,83,.45);
 }
 
-.photo-wrapper-card:hover .couple-photo {
-    transform: scale(1.06);
+/* Photo Frame */
+.photo-frame{
+    width:100%;
+    aspect-ratio:4/5;
+
+    border-radius:12px;
+
+    position:relative;
+    overflow:hidden;
+
+    border:2px solid rgba(194,157,83,.75);
+
+    box-shadow:
+        inset 0 0 30px rgba(255,255,255,.08),
+        0 0 25px rgba(194,157,83,.08);
 }
 
-.photo-wrapper-card:hover .photo-frame::before {
-    opacity: 1;
+/* Cinematic Light Overlay */
+.photo-frame::before{
+    content:'';
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255,255,255,.20),
+            rgba(255,255,255,.03) 40%,
+            rgba(0,0,0,.10) 100%
+        );
+
+    z-index:1;
+    pointer-events:none;
+
+    transition:var(--transition-smooth);
 }
 
-.photo-caption {
-    font-family: var(--font-script);
-    font-size: 2.8rem;
-    background: var(--color-gold-foil);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-    margin-top: 1.5rem;
+/* Inner Gold Border */
+.photo-frame::after{
+    content:'';
+    position:absolute;
+
+    top:12px;
+    left:12px;
+    right:12px;
+    bottom:12px;
+
+    border:1px solid rgba(194,157,83,.40);
+
+    z-index:2;
+    pointer-events:none;
 }
 
+/* Photo */
+.couple-photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    filter:
+        brightness(1.02)
+        contrast(1.05)
+        saturate(1.05);
+
+    transition:
+        transform 1.5s cubic-bezier(.25,1,.3,1),
+        filter 1.5s ease;
+}
+
+/* Hover Photo */
+.photo-wrapper-card:hover .couple-photo{
+    transform:scale(1.06);
+
+    filter:
+        brightness(1.05)
+        contrast(1.08)
+        saturate(1.08);
+}
+
+.photo-wrapper-card:hover .photo-frame::before{
+    opacity:.7;
+}
+
+/* Caption */
+.photo-caption{
+    font-family:var(--font-script);
+    font-size:2.8rem;
+
+    background:var(--color-gold-foil);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-align:center;
+    margin-top:1.5rem;
+}
 /* 5. Event Details Section */
 .details-section {
     background-color: var(--bg-pearl-white);
@@ -1348,7 +1431,7 @@ body {
 
 .footer-copyright {
     font-family: var(--font-body);
-    font-size: 0.75rem;
+    font-size: 0.69rem;
     font-weight: 200;
     letter-spacing: 4px;
     text-transform: uppercase;
